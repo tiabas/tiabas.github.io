@@ -3,8 +3,13 @@
 <head>
   <title></title>
   <style>
+    @font-face {
+      font-family: BlinkFitness_Lean;
+      src: url('https://www.blinkfitness.com/blinkfitness_lean-webfont.626e3dc480f2e8ae2fd7.woff2');
+    }
+
     body {
-      font-family: Helvetica-Neue, Helvetica, Arial, sans-serif;
+      font-family: BlinkFitness_Lean, Helvetica Neue, Arial, sans-serif;
     }
 
     body,
@@ -14,51 +19,66 @@
     }
 
     .reservation {
-      position: relative;
-      background: #FFF;
-      background-image: url('images/img.png');
-      background-repeat: no-repeat;
+      background-color: #f6f6f6;
+      padding: 24px;
+      font-size: 23px;
     }
 
-    .text {
-      position: absolute;
-      top: 320px;
-      left: 20px;
-      height: 64px;
-      z-index: 100;
-      width: 130px;
-      padding: 16px 8px;
-      font-size: 18px;
-      background-color: #FFF;
+    .details {
+      border: 1px solid #e5e9ed;
+      border-radius: 5px;
+      padding: 28px 18px;
+      background-color: #fff;
+
     }
 
-    .time {
+    #time {
       color: #2077d1;
-      margin: 11px 0 6px 0;
+      margin: 6px 0 6px 0;
       font-weight: bold;
-
+      font-size: 28px;
     }
 
-    .location,
-    .date {
+    #location,
+    #date {
       color: #444b55;
-      font-size: 12px;
+      font-size: 16px;
+      line-height: 1.3em;
       display: block;
+      font-weight: bold;
     }
   </style>
 </head>
 
 <body>
-  <div>
-    <img src="images/img.png" style="height: 100%; position:absolute; top:0; bottom:0; left: 0" />
-    <div class="text">
-      <p class="time">7:00am</p>
-      <div>
-        <span class="location">East Village</span>
-        <span class="date">Thursday, Mar 03</span>
+  <div style="width: 604px">
+    <header>
+      <img src="images/header.png" />
+    </header>
+    <div class="reservation">
+      <div class="details">
+        <p id="time"></p>
+        <div>
+          <span id="location">Noho</span>
+          <span id="date"></span>
+        </div>
       </div>
     </div>
+    <footer>
+      <img src="images/footer.png" />
+    </footer>
   </div>
+  <script>
+    var d = new Date();
+    var options = { weekday: 'long', month: 'short', day: '2-digit' };
+    document.getElementById("date").innerHTML = d.toLocaleDateString("en-US", options);
+
+    var hours = d.getHours();
+    var minutes = d.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    var strTime = ("0" + hours).slice(-2) + ':' + ("0" + minutes).slice(-2) + ' ' + ampm;
+    document.getElementById("time").innerHTML = strTime;    
+  </script>
 </body>
 
 </html>
