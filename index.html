@@ -29,7 +29,8 @@
       border-radius: 5px;
       padding: 28px 18px;
       background-color: #fff;
-
+      display: flex;
+      justify-content: space-between
     }
 
     #time {
@@ -47,6 +48,15 @@
       display: block;
       font-weight: bold;
     }
+
+    #button {
+      padding: 14px 22px;
+      background-color: #c6cbd1;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 5px;
+      color: #FFF
+    }
   </style>
 </head>
 
@@ -57,17 +67,26 @@
     </header>
     <div class="reservation">
       <div class="details">
-        <p id="time"></p>
-        <div>
-          <span id="location">Noho</span>
-          <span id="date"></span>
+        <div id="left">
+          <p id="time"></p>
+          <div>
+            <span id="location">Noho</span>
+            <span id="date"></span>
+          </div>
+        </div>
+        <div id="right" style="display: flex; align-items: center">
+          <div id="button">CANCEL</div>
         </div>
       </div>
+
     </div>
     <footer>
       <img src="images/footer.png" />
     </footer>
+    <img src="images/img.png" />
+
   </div>
+
   <script>
     var d = new Date();
     var options = { weekday: 'long', month: 'short', day: '2-digit' };
