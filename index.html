@@ -1,0 +1,64 @@
+<html>
+
+<head>
+  <title></title>
+  <style>
+    body {
+      font-family: Helvetica-Neue, Helvetica, Arial, sans-serif;
+    }
+
+    body,
+    html {
+      height: 100%;
+      width: 100%;
+    }
+
+    .reservation {
+      position: relative;
+      background: #FFF;
+      background-image: url('images/img.png');
+      background-repeat: no-repeat;
+    }
+
+    .text {
+      position: absolute;
+      top: 320px;
+      left: 20px;
+      height: 64px;
+      z-index: 100;
+      width: 130px;
+      padding: 16px 8px;
+      font-size: 18px;
+      background-color: #FFF;
+    }
+
+    .time {
+      color: #2077d1;
+      margin: 11px 0 6px 0;
+      font-weight: bold;
+
+    }
+
+    .location,
+    .date {
+      color: #444b55;
+      font-size: 12px;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <img src="images/img.png" style="height: 100%; position:absolute; top:0; bottom:0; left: 0" />
+    <div class="text">
+      <p class="time">7:00am</p>
+      <div>
+        <span class="location">East Village</span>
+        <span class="date">Thursday, Mar 03</span>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
