@@ -1,19 +1,30 @@
 <html>
 
 <head>
+  <meta name="apple-mobile-web-app-title" content="Blink Reservation">
+  <meta name=”apple-mobile-web-app-capable” content=”yes”>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
   <title></title>
+
   <style>
     @font-face {
       font-family: BlinkFitness_Lean;
       src: url('https://www.blinkfitness.com/blinkfitness_lean-webfont.626e3dc480f2e8ae2fd7.woff2');
     }
 
+    html,
     body {
       padding: 0;
       margin: 0;
       font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
       height: 100%;
       width: 100%;
+    }
+
+    .card {
+      width: 603px;
+      overflow: hidden;
     }
 
     .reservation {
@@ -59,7 +70,7 @@
 </head>
 
 <body>
-  <div style="width: 100%; height: 100%">
+  <div class="card">
     <header>
       <img src=" images/header.png" />
     </header>
@@ -92,7 +103,7 @@
     var minutes = Math.floor(d.getMinutes() / 10) * 10;
     var ampm = hours >= 12 ? 'pm' : 'am';
     var strTime = ("0" + hours).slice(-2) + ':' + ("0" + minutes).slice(-2) + ' ' + ampm;
-    document.getElementById("time").innerHTML = strTime;    
+    document.getElementById("time").innerHTML = strTime;
   </script>
 </body>
 
