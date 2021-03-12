@@ -102,7 +102,7 @@
     var hours = d.getHours();
     var minutes = Math.floor(d.getMinutes() / 10) * 10;
     var ampm = hours >= 12 ? 'pm' : 'am';
-    var to12 = hours < ? hours : (hours - 12)
+    var to12 = hours < 12 ? hours : (hours - 12)
     var strTime = ("0" + to12).slice(-2) + ':' + ("0" + minutes).slice(-2) + ' ' + ampm;
     document.getElementById("time").innerHTML = strTime;
   </script>
